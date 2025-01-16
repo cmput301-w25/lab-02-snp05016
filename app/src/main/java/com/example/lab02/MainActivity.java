@@ -1,7 +1,10 @@
 package com.example.lab02;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -12,10 +15,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ListView cityList;
+    Button addCity;
+    Button confirm;
+    Button deleteCity;
+    EditText input;
     ArrayAdapter<String> cityAdaptor;
     ArrayList<String> dataList;
     @Override
@@ -34,6 +40,31 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        addCity = findViewById(R.id.Addlist);
+        confirm = findViewById(R.id.confirm);
+        deleteCity = findViewById(R.id.DeleteList);
+        input = findViewById(R.id.editTextText);
+        addCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirm.setVisibility(view.VISIBLE);
+                input.setVisibility(view.VISIBLE);
+            }
+        });
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String newCity = input.getText().toString();
+                dataList.add(newCity);
+                cityList.setAdapter(cityAdaptor);
+                input.setVisibility(view.GONE);
+                confirm.setVisibility(view.GONE);
+            }
+        });
+
     }
+
+
+
 
 }

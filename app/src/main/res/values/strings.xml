@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Lab02</string>
     <string name="sample_text">sample-text</string>
+    <string name="button">Button</string>
+    <string name="add_city">Add City</string>
+    <string name="name">Name</string>
+    <string name="list">List</string>
+    <string name="delete_city">Delete City</string>
+    <string name="choose_city">Choose City</string>
+    <string name="confirm">Confirm</string>
+    <string name="add_a_city">Add a City</string>
+    <string name="delete_a_city">Delete a City</string>
+    <string name="enter_city">Enter City</string>
+    <string name="confirm_city">confirm city</string>
 </resources>

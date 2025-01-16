@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Lab02</string>
+    <string name="sample_text">sample-text</string>
 </resources>

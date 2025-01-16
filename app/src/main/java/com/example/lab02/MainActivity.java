@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         cityList = findViewById(R.id.city_list);
+        addCity = findViewById(R.id.Addlist);
+        confirm = findViewById(R.id.confirm);
+        deleteCity = findViewById(R.id.DeleteList);
+        input = findViewById(R.id.editTextText);
+
         String[] cities = {"Edmonton" , "Vancouver" , "Moscow" , "Sydney" , "Berlin" , "Vienna" , "Tokyo" , "Beijing" , "Osaka" , "New Delhi"};
         dataList = new ArrayList<>();
         dataList.addAll(Arrays.asList(cities));
@@ -40,15 +45,12 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        addCity = findViewById(R.id.Addlist);
-        confirm = findViewById(R.id.confirm);
-        deleteCity = findViewById(R.id.DeleteList);
-        input = findViewById(R.id.editTextText);
+
         addCity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                confirm.setVisibility(view.VISIBLE);
-                input.setVisibility(view.VISIBLE);
+                confirm.setVisibility(View.VISIBLE);
+                input.setVisibility(View.VISIBLE);
             }
         });
         confirm.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +59,18 @@ public class MainActivity extends AppCompatActivity {
                 String newCity = input.getText().toString();
                 dataList.add(newCity);
                 cityList.setAdapter(cityAdaptor);
-                input.setVisibility(view.GONE);
-                confirm.setVisibility(view.GONE);
+                input.setVisibility(View.GONE);
+                confirm.setVisibility(View.GONE);
             }
         });
+        deleteCity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirm.setVisibility(View.VISIBLE);
+                input.setVisibility(View.VISIBLE);
+            }
+        });
+
 
     }
 

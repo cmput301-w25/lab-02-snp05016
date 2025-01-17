@@ -30,29 +30,20 @@
         android:ems="10"
         android:inputType="text"
         android:visibility="invisible"
-        android:text="@string/enter_city"
+        android:hint="Enter City"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/Addlist"
-        android:layout_width="150dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
         android:layout_marginTop="4dp"
         android:text="@string/add_a_city"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/DeleteList"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="28dp"
-        android:text="@string/delete_a_city"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
     <Button
         android:id="@+id/confirm"
         android:layout_width="wrap_content"

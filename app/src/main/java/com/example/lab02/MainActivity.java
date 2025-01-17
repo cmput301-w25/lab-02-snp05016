@@ -2,10 +2,12 @@ package com.example.lab02;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         cityList = findViewById(R.id.city_list);
         addCity = findViewById(R.id.Addlist);
         confirm = findViewById(R.id.confirm);
-        deleteCity = findViewById(R.id.DeleteList);
+//        deleteCity = findViewById(R.id.DeleteList);
         input = findViewById(R.id.editTextText);
 
         String[] cities = {"Edmonton" , "Vancouver" , "Moscow" , "Sydney" , "Berlin" , "Vienna" , "Tokyo" , "Beijing" , "Osaka" , "New Delhi"};
@@ -63,11 +65,21 @@ public class MainActivity extends AppCompatActivity {
                 confirm.setVisibility(View.GONE);
             }
         });
-        deleteCity.setOnClickListener(new View.OnClickListener() {
+//        deleteCity.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                confirm.setVisibility(View.VISIBLE);
+//                input.setVisibility(View.VISIBLE);
+//            }
+//        });
+        cityList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public void onClick(View view) {
-                confirm.setVisibility(View.VISIBLE);
-                input.setVisibility(View.VISIBLE);
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                // position gives you the index of the long-pressed item
+                String selectedItem = dataList.get(position);
+                dataList.remove(selectedItem);
+                cityList.setAdapter(cityAdaptor);
+                return true;
             }
         });
 

@@ -3,8 +3,8 @@
 
 ## Student Details
 
-- **Full Name:** `<Enter name>`
-- **CCID:** `<Enter ccid>`
+- **Full Name:** `Saumya Patel`
+- **CCID:** `snp2`
 
 ## References and Resources
 

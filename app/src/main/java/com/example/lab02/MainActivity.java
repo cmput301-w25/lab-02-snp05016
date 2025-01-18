@@ -65,13 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 confirm.setVisibility(View.GONE);
             }
         });
-//        deleteCity.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                confirm.setVisibility(View.VISIBLE);
-//                input.setVisibility(View.VISIBLE);
-//            }
-//        });
+        // i basically set a function that would delete what you long click.
         cityList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
